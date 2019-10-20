@@ -1,6 +1,65 @@
 # Road2Js
 A compilation of useful JS infos I have acquired throughout my journey of diving into JS as a Java developer.
 
+
+## Hoisting
+JavaScript puts function declarations into memory before it executes any block of code. This allows us to use functions even before declaring them. 
+
+```javascript
+// Prints "hello" even if printHello was just declared after this statement
+printHello();
+
+function printHello() {
+    console.log("hello");
+}
+```
+
+Hoisting will make it look like this:
+```javascript
+function printHello() {
+    console.log("hello");
+}
+
+printHello();
+```
+
+It is also good to note that only **function declarations** are hoisted and **not function expressions**.
+```javascript
+printHello();
+
+const printHello = function() {
+    console.log("Hello");
+};
+```
+
+Variable declarations are also hoisted. Take note that initialization is different from variable declarations.
+
+```javascript
+var test = "hello"; // variable declaration
+var testTwo;
+testTwo = 12; // initialization
+```
+A good thing to note is that **only the variable declaration are actually hoisted, not the actual value given to the variable itself**.
+
+There's a difference between `var`, `let` and `const`. `const` will throw an error if no initial value was assigned on declaration. On the other hand, `var` and `let` allows initialization without a value. However, they throw out different errors. `let` throws a `ReferenceError` if it was referenced with no value at all while `var` gives you a value of `undefined`.
+
+```javascript
+console.log(test); // prints undefined
+var test = "hello";
+```
+
+Turns out it would look like this:
+```javascript
+var test;
+console.log(test);
+test = "hello";
+```
+For a deeper explanation, check out `Sukhjinder Arora`'s [medium article](https://blog.bitsrc.io/hoisting-in-modern-javascript-let-const-and-var-b290405adfda).
+
+
+
+
+
 ## NodeJS require V.S ES6 import/export
 It is good to note that currently, there are no browser engines that natively implements `import/export` from the ES6 standard.
 
@@ -10,6 +69,10 @@ From a [stackoverflow thread](https://stackoverflow.com/a/31367852), `Felix Klin
 ![Common JS vs ES6](https://i.stack.imgur.com/5WgFJ.png)
 
 Thanks to `prosti` of stackoverflow for this illustration.
+
+
+
+
 
 ## Coding Conventions
 Majority of the conventions specified in here are from airbnb's [repository](https://github.com/airbnb/javascript). It's a good collection of JS coding conventions. It just so happened that there's too many of them, and I'm only gonna be cherry picking those I think will be useful in the long run.
