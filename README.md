@@ -1,6 +1,16 @@
 # Road2Js
 A compilation of useful JS infos I have acquired throughout my journey of diving into JS as a Java developer.
 
+## NodeJS require V.S ES6 import/export
+It is good to note that currently, there are no browser engines that natively implements `import/export` from the ES6 standard.
+
+From a [stackoverflow thread](https://stackoverflow.com/a/31367852), `Felix Kling` pointed out that
+>Babel converts import and export declaration to CommonJS (require/module.exports) by default. So using ES6 module syntax, you will be using CommonJS under the hood if you run the code in Node. There are technical differences between CommonJS and ES6 modules, e.g. CommonJS allows you to load modules dynamically. ES6 doesn't allow this.
+
+![Common JS vs ES6](https://i.stack.imgur.com/5WgFJ.png)
+
+Thanks to `prosti` of stackoverflow for this illustration.
+
 ## Coding Conventions
 Majority of the conventions specified in here are from airbnb's [repository](https://github.com/airbnb/javascript). It's a good collection of JS coding conventions. It just so happened that there's too many of them, and I'm only gonna be cherry picking those I think will be useful in the long run.
 
@@ -155,4 +165,7 @@ if (-Infinity)
 
 I have omitted those related with space and tab formatting, as those may differ and be agreed on a certain project. We always have linters to rescue on that anyways. Some other items that I have omitted may have been combined to other items ; or I might have found them to be really subjective or not useful at all.
 
-I suggest taking a look of `Clean Code` by Uncle Bob if you want to read more on coding conventions that are language agnostic (e.g: descriptive variable names, etc.).
+I suggest taking a look of `Clean Code` by Uncle Bob if you want to read more on coding conventions that are language agnostic (e.g: descriptive variable names, etc.). 
+
+## ES6 Compatibility Table
+Check out kangax's repository [here](https://github.com/kangax/compat-table).
