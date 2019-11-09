@@ -338,8 +338,6 @@ const returnMultipleProperties = (user) => {
 const { age, name } = returnMultipleProperties(user);
 ```
 
-14. Use single quotes for Strings.
-
 15. Long Strings divided into multiple lines makes it harder to search for references with a text editor or IDE. When trying to build a string with variables, make use of template literals.
 
 16. **Do not ever use eval with strings.** Even the [mozilla reference page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) says so. Same goes for invoking the `Function` constructor.
@@ -367,8 +365,6 @@ const { age, name } = returnMultipleProperties(user);
 27. In modules with a single export, prefer `default` over named export.
 
 28. Place all of your imports above non-import statements.
-
-29. Break the line after the trailing comma.
 
 30. Multiline imports should be indented like a multiline array for readability.
 
@@ -404,7 +400,7 @@ if (-Infinity)
 
 36. Prefer single line ternaries and avoid having nested ones in a single line.
 
-37. Use braces with all multiline block statements.
+37. Use braces with all multiline block statements. This allows you to easily add extra line of statements in the future.
 
 38. Use `/** ... */` for multiline comments and `// ..` for single ones.
 
